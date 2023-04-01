@@ -1,9 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import React, { useState } from "react";
+import { ConfigProvider } from "antd";
+import { HashRouter } from "react-router-dom";
+import zhCN from "antd/lib/locale/zh_CN";
+import Router from "@/routers/index";
 
 function App() {
-	const [count, setCount] = useState(0);
-	return <div className="App">hello world</div>;
+	return (
+		<HashRouter>
+			<ConfigProvider locale={zhCN}>
+				<Router />
+			</ConfigProvider>
+		</HashRouter>
+	);
 }
 
 export default App;
